@@ -1,0 +1,220 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: #181a1b;
+  margin: 0;
+  padding: 0;
+}
+
+.app-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Dotted background using a pseudo-element */
+.app-bg::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    repeating-radial-gradient(circle at 0 0, #ffffff22 1.5px, transparent 4px),
+    repeating-radial-gradient(circle at 25px 25px, #ffffff22 1.5px, transparent 4px);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+  transition: background 0.3s;
+}
+
+/* Dots hover effect using a foreground overlay and JS */
+.dots-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+
+/* Glassy Navbar */
+.navbar-glass {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 2.5rem;
+  background: rgba(30, 30, 40, 0.55);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.13);
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  color: #ff9800;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover {
+  color: #fff;
+}
+
+.page-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.loading, .error, .no-news {
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 2rem;
+}
+
+.error {
+  color: #ff4d4f;
+}
+
+.no-news {
+  color: #b0b0b0;
+  font-style: italic;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.2rem;
+  margin: 0 auto;
+}
+
+/* Glassy News Card */
+.news-card {
+  background: rgba(255,255,255,0.13);
+  border-radius: 22px;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(18px) saturate(180%);
+}
+
+.news-card:hover {
+  transform: translateY(-7px) scale(1.025);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+}
+
+.card-content {
+  padding: 1.7rem 1.5rem 1.2rem 1.5rem;
+  color: #fff;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.35rem;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.card-content p {
+  margin: 0 0 1.3rem 0;
+  color: #e0e0e0;
+  line-height: 1.6;
+  flex-grow: 1;
+  font-size: 1.05rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #bdbdbd;
+  font-size: 0.97rem;
+  margin-top: auto;
+}
+
+.read-more-btn {
+  display: inline-block;
+  margin-top: 1.1rem;
+  padding: 0.55rem 1.3rem;
+  background: linear-gradient(90deg, #ff9800 0%, #ff5722 100%);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(255,87,34,0.13);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.read-more-btn:hover {
+  background: linear-gradient(90deg, #ff5722 0%, #ff9800 100%);
+  box-shadow: 0 4px 16px rgba(255,152,0,0.18);
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    padding: 1rem;
+  }
+  .news-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .navbar-glass {
+    padding: 0.7rem 1.2rem;
+  }
+} 

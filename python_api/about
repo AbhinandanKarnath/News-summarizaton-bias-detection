@@ -1,0 +1,79 @@
+📁 main.py — Bias Detection API using FastAPI
+✅ Purpose:
+Performs bias analysis on given text using multiple heuristics. Built with FastAPI.
+
+🔍 Main Features:
+Feature	Description
+Bias Types Detected	gender, racial, confirmation, sentiment, loaded_language
+Endpoint /analyze	Accepts raw text and analysis types, returns detected biases with confidence, severity, suggestions
+Concurrency	Uses asyncio + ThreadPoolExecutor for async performance
+Text Processing	Uses NLTK for tokenization, stopword removal, and basic NLP
+Sentiment Analysis	Via TextBlob (polarity & subjectivity)
+API Docs	Accessible via /docs
+Health Check	GET /health for app status
+
+🔧 Tech Stack:
+FastAPI
+
+NLTK
+
+TextBlob
+
+scikit-learn (for TF-IDF vectorizer)
+
+Uvicorn (for serving)
+
+lru_cache (for caching preprocessed results)
+
+📁 summarization.py — Summarization & Scraping API using Flask
+✅ Purpose:
+Performs web scraping, text summarization, and article statistics. Built with Flask.
+
+🔍 Main Features:
+Feature	Description
+Scrape Article	POST /scrape_article – Extracts main content from a URL using BeautifulSoup
+Extractive Summarizer	POST /extractive_summary – Frequency-based summarization using NLTK
+Transformer Summarizer	POST /transformer_summary – Uses facebook/bart-large-cnn for abstractive summarization
+Article Stats	POST /article_stats – Returns sentence/word counts, avg sentence length, and reading ease
+Text Preprocessing	Lowercasing, stemming, stopword removal (via PorterStemmer + NLTK)
+Logging	Uses Python's logging module for structured logging
+Model	BART from HuggingFace Transformers
+
+🔧 Tech Stack:
+Flask
+
+BeautifulSoup (web scraping)
+
+NLTK
+
+Textstat (reading ease)
+
+Transformers (BART model)
+
+📌 Summary Comparison
+Feature	main.py (Bias Detection)	summarization.py (Summarizer)
+Web Framework	FastAPI	Flask
+Bias Analysis	✅	❌
+Text Summarization	❌	✅ Extractive & Transformer-based
+Article Scraping	❌	✅
+Reading Stats	❌	✅
+ML Model (BART)	❌	✅
+Async Support	✅	❌ (Flask is sync)
+
+💡 Recommendation:
+To unify everything:
+
+Convert summarization.py into FastAPI modules/services and plug them into main.py.
+
+This enables a single FastAPI app with endpoints for:
+
+/analyze (bias)
+
+/scrape_article
+
+/summarize
+
+/article_stats
+
+/verify_news ✅ (new, combining all)
+

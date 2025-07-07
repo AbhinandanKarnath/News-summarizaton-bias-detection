@@ -1,0 +1,28 @@
+main.py(Bias detection) : http://localhost:8000/analyze
+{
+  "text": "She is a committed and enthusiastic team player. Obviously, everyone agrees she is the best choice.",
+  "analysis_types": ["all"],
+  "language": "en"
+}
+
+
+==========================================================
+summarization.py 
+
+Extractive summary : http://localhost:5000/extractive_summary
+{
+  "text": "In recent years, urban farming has emerged as a powerful movement reshaping how cities think about food production. With increasing concerns over food security, climate change, and the environmental impact of long-distance food transportation, more communities are turning to local solutions. Rooftop gardens, vertical farms, and community plots are becoming common sights in metropolitan areas.One of the key drivers of this trend is the advancement in agricultural technology. Innovations such as hydroponics and aeroponics allow crops to grow without soil, using significantly less water than traditional farming. These methods are particularly well-suited for dense urban environments where space is limited.Beyond environmental benefits, urban farming also fosters community engagement. Local residents often participate in maintaining gardens, which can strengthen neighborhood ties and provide educational opportunities for children. Moreover, access to fresh produce in urban food deserts can improve public health outcomes.Despite its promise, urban farming faces challenges. Regulatory hurdles, high startup costs, and limited access to sunlight in some cityscapes can hinder growth. However, with continued innovation and policy support, urban agriculture could play a vital role in building more sustainable and resilient cities.",
+  "num_sentences": 2
+}
+
+Abstractive summary: http://localhost:5000/transformer_summary
+{
+    "text": "In recent years, urban farming has emerged as a powerful movement reshaping how cities think about food production. With increasing concerns over food security, climate change, and the environmental impact of long-distance food transportation, more communities are turning to local solutions. Rooftop gardens, vertical farms, and community plots are becoming common sights in metropolitan areas.One of the key drivers of this trend is the advancement in agricultural technology. Innovations such as hydroponics and aeroponics allow crops to grow without soil, using significantly less water than traditional farming. These methods are particularly well-suited for dense urban environments where space is limited.Beyond environmental benefits, urban farming also fosters community engagement. Local residents often participate in maintaining gardens, which can strengthen neighborhood ties and provide educational opportunities for children. Moreover, access to fresh produce in urban food deserts can improve public health outcomes.Despite its promise, urban farming faces challenges. Regulatory hurdles, high startup costs, and limited access to sunlight in some cityscapes can hinder growth. However, with continued innovation and policy support, urban agriculture could play a vital role in building more sustainable and resilient cities.",
+    "max_length": 29,
+    "min_length": 20
+}
+
+Scrape_website : http://localhost:5000/scrape_article
+{
+    "url": "https://indianexpress.com/article/india/trump-claim-proud-stopping-india-pakistan-potential-nuclear-war-10088656/"
+}
