@@ -351,3 +351,50 @@ This project is for educational purposes.
 ---
 
 **Happy coding! 🚀** 
+
+Your request is now implemented! Here’s what you need to do to see live news from The Hindu on your homepage:
+
+**What’s done:**
+- A Python web scraper (`thehindu_scraper.py`) fetches the latest news from https://www.thehindu.com/.
+- A Flask API server (`api_server.py`) serves this news at `http://localhost:5000/api/news`.
+- Your React app (`App.jsx`) is updated to fetch and display this news on the homepage.
+- You can start both servers easily with `start_app.bat` or `start_app.py`.
+
+---
+
+### How to Run
+
+1. **Install dependencies**  
+   Open a terminal in the `NewsApp` folder and run:
+   ```
+   pip install -r requirements.txt
+   npm install
+   ```
+
+2. **Start the app**  
+   - On Windows, just double-click `start_app.bat`  
+   - Or run manually:
+     ```
+     python src/utils/api_server.py
+     ```
+     In another terminal:
+     ```
+     npm run dev
+     ```
+
+3. **Visit**  
+   Open [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
+
+---
+
+### What you’ll see
+
+- The homepage will show the latest news headlines scraped from The Hindu.
+- Each card shows the title, description, category, author, and publication date.
+- If scraping fails, it falls back to your original news API.
+
+---
+
+**If you want to customize or add more sources, check the new `README_THEHINDU.md` for details!**
+
+Let me know if you want to further improve the scraper, add images, or filter by category! 

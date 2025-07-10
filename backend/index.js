@@ -1,12 +1,16 @@
 const axios = require('axios');
 
-const API_KEY = '0VmFbHG7SMUXUxF8GDEAERa1RQnuRXoSzhxRES0U'; // Replace this
+//https://newsapi.org/v2/everything?q=tesla&from=2025-06-07&sortBy=publishedAt&apiKey=ca39f7414d5e45f08eb7ca61f72422c0 api to use.
+
+// const API_KEY = '0VmFbHG7SMUXUxF8GDEAERa1RQnuRXoSzhxRES0U'; // Replace this
+
+const API_KEY = 'ca39f7414d5e45f08eb7ca61f72422c0'
 const COUNTRY = 'in'; // India
 
 const fetchIndianNews = async () => {
   try {
     const response = await axios.get(
-      `https://api.thenewsapi.com/v1/news/all?api_token=${API_KEY}`
+      `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${API_KEY}`
     );
 
     const articles = response.data.data || response.data.articles;
